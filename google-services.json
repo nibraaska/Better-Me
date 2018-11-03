@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "215137068108",
+    "firebase_url": "https://better-me-9342f.firebaseio.com",
+    "project_id": "better-me-9342f",
+    "storage_bucket": "better-me-9342f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215137068108:android:2f7de708f34dfe4f",
+        "android_client_info": {
+          "package_name": "com.nibraas.betterme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215137068108-kit9l6ah7kfbd4k2dv13ms725oa02sl1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nibraas.betterme",
+            "certificate_hash": "be7dd8ed636832718ae6c69774c1c4e82fc69fbc"
+          }
+        },
+        {
+          "client_id": "215137068108-2764mj2nqji57ia4p07dcj7258jha0fh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn2YuRGxzBEnS3SB2h0T0qiVFvACMEAFc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215137068108-2764mj2nqji57ia4p07dcj7258jha0fh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
