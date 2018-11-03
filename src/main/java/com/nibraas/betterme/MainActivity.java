@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         email = findViewById(R.id.etEmail);
-        SignIn = findViewById(R.id.button);
+        SignIn = findViewById(R.id.signIn);
         password = findViewById(R.id.etPassword);
-        regist = findViewById(R.id.signinbtn);
+        regist = findViewById(R.id.regist);
         myAuth = FirebaseAuth.getInstance();
 
 
