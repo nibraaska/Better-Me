@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button regist;
     FirebaseAuth myAuth;
     String myEmail, myPassword, myC_Password;
+    ProgressBar progbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.etPassword);
         c_password = findViewById(R.id.etC_password);
         regist = findViewById(R.id.registbtn);
+        progbar = findViewById(R.id.progressBar1);
 
         myAuth = FirebaseAuth.getInstance();
 
@@ -66,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                     c_password.requestFocus();
                 }
                 else {
+                    progbar.setVisibility(View.VISIBLE);
                     CreateNewUser();
                 }
             }
@@ -78,10 +82,12 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            progbar.setVisibility(View.GONE);
                             finish();
                             Intent i = new Intent(RegisterActivity.this, com.nibraas.betterme.PreferenceActivity.class);
                             startActivity(i);
                         } else {
+                            progbar.setVisibility(View.GONE);
                             if(task.getException() instanceof FirebaseAuthUserCollisionException){
                                 email.setError("Email is already registered");
                                 email.requestFocus();
