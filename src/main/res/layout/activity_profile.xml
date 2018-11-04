@@ -29,6 +29,13 @@
         android:alpha="0.3"
         android:background="@drawable/purp_shape_bottomstraight" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/smiling_emoji"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

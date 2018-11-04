@@ -108,6 +108,18 @@
         android:textSize="12dp"
         />
 
+    <Button
+        android:layout_width="145dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="385dp"
+        android:background="@drawable/purptablet_shape"
+
+        android:text="Donate"
+        android:textColor="#FFF"
+        android:textSize="12dp"
+        />
+
+
     <View
         android:layout_width="52dp"
         android:layout_height="52dp"

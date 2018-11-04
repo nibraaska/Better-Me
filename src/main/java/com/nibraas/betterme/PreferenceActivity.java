@@ -121,6 +121,7 @@ public class PreferenceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 updateUserPref();
+                startActivity(new Intent(PreferenceActivity.this, HomePageActivity.class));
             }
         });
     }
@@ -131,22 +132,21 @@ public class PreferenceActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         if(health.isSelected()){
-            pref += "Health, ";
+            pref += "Health ";
         }
         if(social.isSelected()){
-            pref += "Social, ";
+            pref += "Social ";
         }
         if(intellect.isSelected()){
-            pref += "Intellect, ";
+            pref += "Intellect ";
         }
         if(exp.isSelected()){
-            pref += "Experience";
+            pref += "Experience ";
         }
         if(pref != ""){
             myRef = database.getReference(user.getUid() + "/preference");
             myRef.setValue(pref);
         }
-
         progressBar.setVisibility(View.GONE);
     }
 }
