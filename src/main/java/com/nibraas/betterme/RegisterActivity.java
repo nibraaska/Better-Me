@@ -78,6 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            finish();
                             Intent i = new Intent(RegisterActivity.this, com.nibraas.betterme.PreferenceActivity.class);
                             startActivity(i);
                         } else {
