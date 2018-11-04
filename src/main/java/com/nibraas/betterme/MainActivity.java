@@ -1,9 +1,12 @@
 package com.nibraas.betterme;
 
+import android.accounts.Account;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +16,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -20,17 +30,24 @@ public class MainActivity extends AppCompatActivity {
     Button SignIn;
     String myEmail, myPassword;
     FirebaseAuth myAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            Intent i = new Intent(MainActivity.this, HomePageActivity.class);
+            startActivity(i);
+        }
         email = findViewById(R.id.etEmail);
         SignIn = findViewById(R.id.signIn);
         password = findViewById(R.id.etPassword);
         regist = findViewById(R.id.regist);
         myAuth = FirebaseAuth.getInstance();
+
 
 
         SignIn.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), myAuth.getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, HomePageActivity.class));
                 }else{
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }

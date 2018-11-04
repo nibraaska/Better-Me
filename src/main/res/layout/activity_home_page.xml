@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingTop="30dp"
+android:paddingBottom="30dp"
+android:paddingLeft="40dp"
+android:paddingRight="40dp"
+tools:context=".HomePageActivity"
+
+android:background="@drawable/background_gradient">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:text="Home"
+    android:textColor="#FFF"
+    android:textSize="16dp"
+    android:textStyle="bold"
+    />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    android:alpha="0.3"
+    android:background="@drawable/purptablet_shape" />
+
+<TextView
+    android:id="@+id/quote"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginTop="50dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
+    android:text="Change your life today. Don't gamble on the future, act now, without delay."
+    android:textColor="#FFF"
+    android:textSize="12dp"
+    />
+
+<TextView
+    android:id="@+id/author"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginTop="95dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
+    android:text="Simon de Beauvoir"
+    android:textColor="#FFF"
+    android:textSize="12dp"
+    />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+
+    android:background="@drawable/purptablet_shape"
+    android:alpha="0.7"
+
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="200dp"/>
+
+<TextView
+    android:id="@+id/goal"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:layout_marginTop="200dp"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+
+    android:gravity="center"
+
+    android:text="Say 'hi' to a stranger today!"
+    android:textColor="#FFF"
+    android:textSize="14dp"
+    android:textStyle="bold"
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="220dp"
+    android:layout_marginLeft="30dp"
+
+
+    android:text="Goal"
+    android:textColor="#C4B7F8"
+    android:textSize="14dp"
+    android:textStyle="bold"
+    />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="220dp"
+    android:layout_marginLeft="210dp"
+
+
+    android:text="05:25:00"
+    android:textColor="#C4B7F8"
+    android:textSize="14dp"
+    android:textStyle="bold"
+    />
+
+<Button
+    android:layout_width="145dp"
+    android:layout_height="35dp"
+    android:layout_marginLeft="160dp"
+    android:layout_marginTop="385dp"
+    android:background="@drawable/purptablet_shape"
+
+    android:text="Done"
+    android:textColor="#FFF"
+    android:textSize="12dp"
+    />
+
+
+</android.widget.RelativeLayout>
+
