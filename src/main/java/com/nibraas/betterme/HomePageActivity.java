@@ -32,7 +32,8 @@ public class HomePageActivity extends AppCompatActivity {
     FirebaseUser user;
     TextView quote, goal;
     String child;
-    String pref;
+    String pref[];
+    String prefs[];
     String goal_cat;
     int count = 1;
 
@@ -57,25 +58,27 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     private void getDare() {
-        final DatabaseReference ref = firebaseDatabase.getReference();
+        final DatabaseReference ref = firebaseDatabase.getReference(user.getUid() + "/preference");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                pref = dataSnapshot.getValue().toString().split(" ");
+                Toast.makeText(HomePageActivity.this, pref[1], Toast.LENGTH_SHORT).show();
 
-                // SHOULD BE RANDOM BUT DID NOT DO IT TIME
-                final DatabaseReference ref2 = firebaseDatabase.getReference("Social/Intermediate/3" );
-                ref2.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        goal.setText(dataSnapshot.getValue().toString());
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(HomePageActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                // SHOULD BE RANDOM BUT DID NOT DO IT TIME
+//                final DatabaseReference ref2 = firebaseDatabase.getReference("Social/Intermediate/3" );
+//                ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                        goal.setText(dataSnapshot.getValue().toString());
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError databaseError) {
+//                        Toast.makeText(HomePageActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
             }
 
             @Override
